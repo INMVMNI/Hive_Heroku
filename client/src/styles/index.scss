@@ -1,14 +1,14 @@
-@import "base/reset";
-@import "base/common";
-@import "base/font-face";
-@import "abstracts/mixins";
+@import "./base/reset";
+@import "./base/common";
+@import "./base/font-face";
+@import "./abstracts/mixins";
 
-@import "route/main";
-@import "route/MainEditor";
-@import "route/project";
-@import "route/projectEditor";
-@import "route/contact";
-@import "route/about";
-@import "route/login";
+@import "./route/main";
+@import "./route/MainEditor";
+@import "./route/project";
+@import "./route/projectEditor";
+@import "./route/contact";
+@import "./route/about";
+@import "./route/login";
 
-@import "transition/transition";
+@import "./transition/transition";
