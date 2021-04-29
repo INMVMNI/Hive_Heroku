@@ -1,0 +1,363 @@
+
+#bgi-slct {
+  z-index: 6;
+  position: absolute;
+  top:0;
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  @include flexCenter
+
+
+  #bgi-box {
+    position: relative;
+    width: 750px;
+    height: 96vh;
+    max-height: 800px;
+    border-radius: 5px;
+    background-color: white;
+
+    header {
+      height: 7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // padding: 0 18px;
+      // border: solid black 1px;
+
+      @include phone-view {
+        align-items: flex-end;
+      }
+
+      p {
+        position: absolute;
+        left: 18px;
+        font-family: 'Brandon-Grotesque-Medium';
+        font-size: 18px;
+        color: #303030;
+        letter-spacing: 1px;
+
+        @include phone-view {
+          top: 2%;
+        }
+      }
+
+      #bgi-selector {
+        // width: 200px;
+        width: 33%;
+        display: flex;
+        justify-content: space-between;
+        // overflow: hidden;
+        font-family: 'Brandon-Grotesque-Bold';
+        text-align: center;
+        font-size: 8px;
+        letter-spacing: 1px;
+        // border: solid black 1px;
+
+        div {
+          width: 32%;
+          // padding: 1.25vh .5vh 1vh .5vh;
+          padding: .75vh .5vh .5vh .5vh;
+          cursor: pointer;
+          // background-color: rgba(255, 255, 255, .8);
+          // background-color: rgba(255, 255, 255, .2);
+          background-color: rgba(0, 0, 0, .2);
+          border-radius: 2px;
+          color: white;
+
+          &:nth-child(1) {
+            // border-top-left-radius: 3px;
+            // border-bottom-left-radius: 3px;
+          }
+
+          &:nth-child(2) {
+            // margin: 0 20px;
+          }
+
+          &:nth-child(3) {
+            // border-top-right-radius: 3px;
+            // border-bottom-right-radius: 3px;
+          }
+        }
+
+        div.active {
+          // background-color: rgba(0, 0, 0, .2);
+          background-color: #303030;
+          // background-color: #EBE5DC;
+          // border-bottom: solid #303030 1px;
+          // text-decoration: underline;
+          // color: #303030;
+        }
+      }
+      #bgi-close {
+        position: absolute;
+        // top: 3.75%;
+        // right: 2.25%;
+        right: 18px;
+        cursor: pointer;
+
+        @include phone-view {
+          top: 2%;
+        }
+      }
+    }
+
+    @import "component/preview";
+
+      #lndscp-glry {
+        width: 100%;
+        height: 27%;
+        // max-height: 190px;
+        max-height: 216px;
+        overflow-x: scroll;
+        display: flex;
+        padding: 3vh 0 3vh 2vh;
+        animation-name: fadein1;
+        animation-duration: 1.5s;
+
+        figure {
+          position: relative;
+          height: 100%;
+          border: solid rgba(0,0,0,0) 2px ;
+          margin-right: 2%;
+          border-radius: 8px;
+          opacity: 0;
+          transition: opacity .5s;
+          -webkit-box-shadow: 4px 4px 9px -3px rgba(0,0,0,0.3);
+          box-shadow: 4px 4px 9px -3px rgba(0,0,0,0.3);
+
+          &.loaded {
+            opacity: 1;
+          }
+
+          img {
+            height: 100%;
+            border-radius: 6px;
+            filter: brightness(.8);
+          }
+
+          &.active.loaded {
+            border: solid #505050 .5vh;
+
+            &:before {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              flex-direction:row;
+              align-items: center;
+              font-family: 'Futura PT';
+              content: 'SELECTED';
+              font-size: 1.5vh;
+              letter-spacing: 4px;
+              color: #303030;
+              background-color: rgba(255,255,255,0);
+              text-align: center;
+              padding: 2.5vh;
+              white-space: pre-wrap;
+            }
+            img {
+              height: 100%;
+              opacity: .2;
+            }
+          }
+        }
+      }
+    // }
+
+    //////////////////////////////////////////////////////////////////////////////
+
+    &.select {
+      #prtrt-gallery {
+        display: none;
+      }
+      #align-btns {
+        display: none;
+      }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////
+
+    &.align {
+      #prtrt-gallery {
+        display: none;
+      }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////
+
+    &.phone {
+
+      #lndscp-glry {
+        display: none;
+      }
+
+      #prtrt-gallery {
+        position: absolute;
+        top: 0;
+        // right: 6vh;
+        right: 53px;
+        // width: 16vh;
+        width: 150px;
+        height: 100%;
+        // padding: 0 3%;
+        overflow-x: scroll;
+        padding-top: 2vh;
+        animation-name: fadein3;
+        animation-duration: 1.5s;
+
+        figure {
+          position: relative;
+          width: 100%;
+          margin-bottom: 12px;
+          border-radius: 10px;
+          -webkit-box-shadow: 4px 4px 9px -3px rgba(0,0,0,0.3);
+          box-shadow: 4px 4px 9px -3px rgba(0,0,0,0.3);
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+          }
+
+          &.active {
+            border: solid #505050 .4vh;
+            padding: 0px;
+
+            &:before {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              flex-direction:row;
+              align-items: center;
+              font-family: 'Futura PT';
+              content: 'CLICK\A TO\A DESELECT';
+              font-size: 1.5vh;
+              letter-spacing: 4px;
+              color: #303030;
+              text-align: center;
+              padding: 2.5vh;
+              white-space: pre-wrap;
+            }
+            img {
+              height: 100%;
+              opacity: .3;
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+
+      @include phone-view {
+
+        #prtrt-gallery {
+          display: flex;
+          top: auto;
+          right: auto;
+          width: 100%;
+          height: 25%;
+          padding-top: 0vh;
+          padding: 0 0 2.5vh 3%;
+          overflow-x: scroll;
+
+          figure {
+            position: relative;
+            height: 100%;
+            margin-right: 3vw;
+            margin-bottom: 0;
+            border-radius: 10px;
+
+            img {
+              width: auto;
+              height: 100%;
+              border-radius: 6px;
+            }
+
+            &.active {
+              border: solid #505050 .4vh;
+              padding: 0px;
+
+              &:before {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction:row;
+                align-items: center;
+                font-family: 'Futura PT';
+                content: 'CLICK\A TO\A DESELECT';
+                -webkit-font-smoothing: antialiased;
+                font-size: 1.5vh;
+                letter-spacing: 4px;
+                color: #303030;
+                text-align: center;
+                padding: 2.5vh;
+                white-space: pre-wrap;
+              }
+
+              img {
+                height: 100%;
+                opacity: .3;
+                border-radius: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include phone-view {
+    #bgi-close {
+      z-index: 2;
+      position: absolute;
+      top: 2vw;
+      right: 5vw;
+      font-size: 8vw;
+      color: #656565;
+    }
+
+    #bgi-box {
+      height: 100%;
+      width: 100%;
+
+      header {
+        height: 9%;
+
+        #bgi-selector {
+          width: 50%;
+          font-size: 8px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadein1 {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadein2 {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadein3 {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  #bgi-slct {
+    backdrop-filter: blur(20px) brightness(.9);
+    -webkit-backdrop-filter: blur(20px);
+    filter: blur(0px);
+
+  }
+}

@@ -1,0 +1,134 @@
+#nav-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background: rgba(0,0,0,.7);
+  background: rgba(222,222,222,.8);
+  z-index: 5;
+
+  #nav {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(0,0,0,.9);
+    background: rgba(255,255,255,1);
+    height: 100%;
+    overflow: hidden;
+    padding-right: 4vw;
+
+    @include tablet-view {
+      padding-right: 6vw;
+    }
+
+    @include phone-view {
+      width: 100vw;
+      padding-right: 0vw;
+      justify-content: center;
+    }
+
+    nav {
+
+      @include phone-view {
+
+      }
+
+      #nav-social {
+        width: 14vh;
+        height: 14px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5vh;
+        float: right;
+        margin-right: 4vw;
+
+        @include tablet-view {
+          width: 13vh;
+          margin-top: 1vh;
+        }
+
+        @include phone-view {
+          width: 40vw;
+          margin: 7vh auto 0 auto;
+          float: none;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .nav-link {
+        font-size: 6vh;
+        margin-bottom: 3vh;
+        text-align: right;
+        white-space: nowrap;
+
+        @include tablet-view {
+          font-size: 5vh;
+        }
+
+        @include phone-view {
+          font-family: 'Brandon-Grotesque-Medium';
+          font-size: 4vh;
+          text-align: center;
+          margin-bottom: 5vh;
+          color: #505050;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+        }
+      }
+
+      #email {
+        font-size: 2vh;
+        margin: 2vh 0;
+        letter-spacing: 2px;
+      }
+
+      #phone {
+        font-size: 1.5vh;
+        letter-spacing: 1px;
+      }
+    }
+
+    #nav-close {
+      position: absolute;
+      top: 3vh;
+      right: 2vw;
+      background: none;
+      font-size: 30px;
+
+      @include tablet-view {
+        right: 6vw;
+      }
+
+      @include phone-view {
+        top: 3vh;
+        right: 6vw;
+      }
+    }
+
+    a, p, h1 {
+      display: block;
+      color: black;
+    }
+
+    #admin-items {
+      margin-top: 10vh;
+      text-align: right;
+      font-size: 10px;
+      display: none;
+
+      @include phone-view {
+        text-align: center;
+      }
+
+      p, a {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

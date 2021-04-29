@@ -1,0 +1,19 @@
+#cover-imgs {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cover-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity .75s .01s;
+}
+
+.cover-image.active {
+  opacity: 1;
+  visibility: visible;
+}

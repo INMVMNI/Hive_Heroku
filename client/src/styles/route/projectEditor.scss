@@ -1,0 +1,77 @@
+
+
+#project-ed {
+  height: 100%;
+  width: 100%;
+  background-color: #F1F0ED;
+
+  #blur-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  #top {
+
+    p {
+      position: absolute;
+      right: 9vw;
+      top: 3.35vh;
+
+    }
+    img {
+      position: absolute;
+      height: 3vh;
+      right: 6vw;
+      top: 3vh;
+      z-index: 7
+    }
+  }
+
+  #gallery-ed {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 2vh;
+    padding-top: 52px;
+    padding-bottom: 2vh;
+
+    .item-cont {
+      height: 100%;
+      display: flex;
+
+      .add-btn-wrap {
+        position: relative;
+        width: 2.25vh;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        @import '../component/galleryAddBtn';
+      }
+    }
+  }
+
+  #bottom {
+    height: 5%;
+    display: flex;
+    justify-content: center;
+
+    img{
+      height: 10vh;
+      margin-top: -6.5vh;
+    }
+  }
+  
+  @import '../component/imageContainer';
+  @import '../component/cardEdit';
+  @import '../component/horizontal';
+  @import '../component/grid';
+}
+
+#blur-container.blur {
+  filter: blur(25px) brightness(.8);
+}

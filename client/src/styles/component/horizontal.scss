@@ -1,0 +1,244 @@
+#h-sort {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0,0,0,.1);
+  z-index: 6;
+
+  header {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.75vh 2vh 1.37vh 2vh;
+    background: rgba(255,255,255,1);
+    font-family: 'Brandon-Grotesque-Bold';
+    font-size: 1.5vh;
+    letter-spacing: 2px;
+    color: #303030;
+
+    p {
+      padding-top: .75vh;
+      margin-left: 10vh;
+    }
+
+    figure {
+      height: 100%;
+
+      img {
+        height: 100%;
+        margin-left: 2vh;
+      }
+    }
+  }
+
+  #h-sort-gallery {
+    width: 100%;
+    height: 40vh;
+    min-height: 200px;
+    display: flex;
+    flex-flow: row;
+    background: white;
+    overflow-x: scroll;
+    padding-bottom: 2vh;
+    padding-left: 2vh;
+    opacity: 1;
+    transition: opacity 1s;
+
+
+    .horiz-imgCont {
+      height: 100%;
+      position: relative;
+      display: flex;
+
+      .image-wrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border: solid rgba(112, 210, 252, 0) .5vh;
+        border-radius: 10px;
+
+        img {
+          height: 100%;
+        }
+
+        &.select {
+          border: solid rgba(112, 210, 252, 1) .5vh;
+          border: solid #505050 .5vh;
+
+          &:before {
+            position: absolute;
+            width: 92%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction:row;
+            align-items: center;
+            padding: 2.5vh;
+            font-family: 'Futura PT';
+            font-size: 12px;
+            letter-spacing: 4px;
+            line-height: 18px;
+            text-align: center;
+            content: 'CLICK\A TO\A DESELECT';
+            background-color: rgba(255,255,255,0);
+            white-space: pre-wrap;
+          }
+          img {
+            opacity: .2;
+          }
+        }
+      }
+    }
+
+    .horiz-card {
+      position: relative;
+      display: flex;
+      margin: .5vh;
+      border-radius: 10px;
+
+      figure {
+        height: 100%;
+        border: solid rgba(80, 80, 80, 0) .5vh;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: center;
+        background: linear-gradient(0deg, rgba(0,0,0,0.02) 0%, rgba(255,255,255,.2) 40%, rgba(229,229,229,.2) 60%, rgba(0,0,0,0.02) 100%);
+
+        h1 {
+          margin-bottom: 1vh;
+          font-family: 'Brandon-Grotesque-Medium';
+          font-size: 2vh;
+          letter-spacing: -1px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        p {
+          width: 25vh;
+          padding: 0 2vh 3vh 2vh;
+          font-family: sans-serif;
+          font-size: 1vh;
+          text-indent: 10px;
+        }
+      }
+
+
+      &.select {
+
+        figure {
+          height: 100%;
+          border: solid rgba(80, 80, 80, 1) .5vh;
+
+          &:before {
+            position: absolute;
+            width: 92%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction:row;
+            align-items: center;
+            background-color: rgba(255,255,255,0);
+            padding: 2.5vh;
+            content: 'CLICK\A TO\A DESELECT';
+            font-family: 'Futura PT';
+            font-size: 14px;
+            text-align: center;
+            line-height: 18px;
+            letter-spacing: 3px;
+            white-space: pre-wrap;
+          }
+
+          p, h1 {
+            opacity: .1;
+          }
+        }
+      }
+    }
+
+    .gap {
+      width: 1vh;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+
+      &.end {
+        margin-right: 30px;
+      }
+
+      .drop-point {
+        z-index: 1;
+        position: absolute;
+        width: 6vh;
+        height: 6vh;
+        min-width: 40px;
+        min-height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 4.2vw;
+        font-weight: 200;
+        transition: transform .1s;
+        transform: scale(0);
+
+        div {
+          position: absolute;
+          width: 90%;
+          height: 90%;
+          top: 50%;
+          left: 50%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+
+          img {
+            position: absolute;
+            height: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+
+    #end-drop {
+      width: 10vh;
+      height: 100%;
+      @include flexCenter;
+
+      div {
+        z-index: 1;
+        width: 7vh;
+        height: 7vh;
+        min-width: 40px;
+        min-height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        padding: 1vh;
+        font-size: 4.2vw;
+        font-weight: 200;
+        text-align: center;
+        margin-left: -50%;
+        transition: transform .1s;
+        transform: scale(0);
+      }
+    }
+
+    &.show-btns {
+      .drop-point {
+        transform: scale(1);
+        transition: transform .5s;
+      }
+    }
+  }
+}

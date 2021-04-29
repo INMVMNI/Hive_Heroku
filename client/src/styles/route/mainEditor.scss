@@ -1,0 +1,56 @@
+@import "../component/uploader";
+@import "../component/confirmDialog";
+@import "../component/listEditor";
+// @import "component/editorMenu";
+@import "../component/BackgroundImageSelect";
+@import "../component/previewMenu";
+// @import "component/spinDoctor";
+@import "../component/uploadSpinner";
+
+
+#main-editor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: width .25s;
+
+  #gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    box-shadow: inset 0px 0px 400px 100px rgba(0,0,0,.5);
+  }
+
+  #img-btn {
+    height: 4vh;
+    position: absolute;
+    bottom: 5.5vh;
+    left: 3vw;
+  }
+
+  @include tablet-view {
+    #gradient-overlay {
+      background: rgba(0,0,0,.3);
+      box-shadow: inset 0px 0px 300px 50px rgba(0,0,0,.8);
+    }
+  }
+
+  @include phone-view {
+    #gradient-overlay {
+      background: rgba(0,0,0,.3);
+      box-shadow: inset 0px 0px 150px 40px rgba(0,0,0,.5);
+    }
+  }
+}
+
+#add-new-btn {
+  position: absolute;
+  bottom: 3vh;
+  right: 3vw;
+  height: 4vh;
+
+  @include phone-view {
+    height: 4vh;
+  }
+}

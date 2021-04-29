@@ -1,0 +1,45 @@
+.glry-add-btn {
+  position: absolute;
+  width: 6vh;
+  height: 6vh;
+  background-color: #F1F0ED;
+  border-radius: 5px;
+  transition: .25s;
+  outline: none;
+  z-index: 1;
+  @include flexCenter;
+
+  .expand-btn {
+    width: 4.75vh;
+    height: 4.75vh;
+    background-color: white;
+    border-radius: 4px;
+    padding: 1.25vh;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,.1);
+  }
+
+  .add-select {
+    height: 88%;
+    width: 93%;
+    @include flexCenter;
+    border-radius: 8px;
+
+    img {
+      height: 100%;
+      padding: .5vh;
+      background-color: rgba(0,0,0,0);
+    }
+  }
+  p {
+    cursor: crosshair;
+    margin: 0 .3vh;
+  }
+}
+
+.glry-add-btn.expand {
+  width: 14vh;
+  height: 9vh;
+  transition: .25s;
+  background-color: white;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.3);
+}
