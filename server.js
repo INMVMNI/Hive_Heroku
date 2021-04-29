@@ -25,6 +25,8 @@ admin.initializeApp({
   databaseURL: 'https://hive-la-home.firebaseio.com'
 })
 
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 const dbProjects = admin.database().ref('projects')
 
 const addNewToDB = (name, public_ids, wide_imgs, vert_imgs) => {
@@ -226,5 +228,9 @@ app.post('/api/update/remove', (req, res) => {
   })
 })
 
-const port = 5000
-app.listen(port, () => console.log(`Server started on port ${port}`))
+// const port = 5000
+// app.listen(port, () => console.log(`Server started on port ${port}`))
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
