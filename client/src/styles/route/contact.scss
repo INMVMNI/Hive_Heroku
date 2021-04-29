@@ -1,0 +1,172 @@
+#contact {
+  position: absolute;
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  min-height: 650px;
+  max-height: 1200px;
+  background: white;
+
+    @include phone-view {
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  #bg-img {
+    position: absolute;
+    width: 100%;
+    max-width: 1500px;
+    height: 100%;
+    background-image: url('https://res.cloudinary.com/hive-la-home/image/upload/q_auto/v1616610020/Contact/contact-door-left-wide.jpg');
+    background-size: auto 100%;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+
+    @include tablet-view {
+      background-image: url('https://res.cloudinary.com/hive-la-home/image/upload/v1618267049/Contact/contact-tablet_2.jpg');
+
+      background-position: left bottom;
+      background-size: cover;
+    }
+
+    @include phone-view {
+      background: none;
+    }
+  }
+
+  #contact-text {
+    position: absolute;
+    left: 430px;
+    bottom: 175px;
+
+    @include tablet-view {
+      left: 275px;
+      top: 300px;
+    }
+
+    @include phone-view {
+      left: auto;
+      bottom: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-family: 'Brandon-Grotesque-Medium';
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+
+      @include tablet-view {
+        font-size: 50px;
+        margin-bottom: 10px;
+      }
+
+      @include phone-view {
+        font-family: 'Brandon-Grotesque-Bold';
+        font-size: 35px;
+        text-align: center;
+        letter-spacing: 10px;
+      }
+    }
+
+    h2 {
+      font-family: 'Didot-Italic';
+      font-family: 'Brandon-Grotesque-Regular';
+      font-size: 28px;
+      letter-spacing: 3px;
+      width: 400px;
+
+      @include tablet-view {
+        font-size: 28px;
+      }
+
+      @include phone-view {
+        width: 50vw;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+      }
+    }
+
+    #contact-links {
+      display: flex;
+      margin-top: 40px;
+      font-size: 10px;
+      font-family: 'Brandon-Grotesque-Regular';
+      font-family: 'Avenir-Medium';
+
+      @include tablet-view {
+        font-size: 10px;
+        display: block;
+        margin-top: 60px;
+        letter-spacing: 2px;
+      }
+
+      @include phone-view {
+        display: block;
+        text-align: center;
+      }
+
+      div {
+        margin-right: 22px;
+
+        @include tablet-view {
+          margin-bottom: 30px;
+        }
+
+        @include phone-view {
+          margin-bottom: 30px;
+          letter-spacing: 3px;
+        }
+      }
+
+      p {
+        margin-bottom: 8px;
+      }
+
+      a {
+        font-family: 'Avenir-Heavy';
+      }
+    }
+  }
+
+  #contact-social {
+    height: 35px;
+    display: flex;
+    margin-top: 40px;
+
+    @include tablet-view {
+      height: 18px;
+      display: flex;
+      margin-top: 60px;
+    }
+
+    @include phone-view {
+      height: 18px;
+      display: flex;
+      margin-top: 40px;
+      justify-content: center;
+    }
+
+    a {
+      height: 35px;
+      width: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      background-color: #e2c6ae;
+      border-radius: 50%;
+      padding: 10px;
+
+      @include phone-view {
+        margin-right: 10px;
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

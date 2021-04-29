@@ -1,0 +1,159 @@
+#trans-wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+#le-overlay {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(10px) brightness(.6);
+}
+
+#list-editor-wrap {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet-view {
+    align-items: center;
+  }
+
+  @include phone-view {
+    align-items: center;
+  }
+
+  #list-close {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    right: 30px;
+    font-size: 35px;
+    font-weight: 100;
+    color: white;
+    cursor: pointer;
+  }
+
+  #close-wrap {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 18px 14px 18px 20px;
+    font-size: 16px;
+    font-family: 'Brandon-Grotesque-Medium';
+    color: #505050;
+
+    img {
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  }
+
+
+  #list-editor {
+    z-index: 3;
+    height: 85vh;
+    grid-column: 3;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow-x: scroll;
+    background-color: white;
+    padding: 0px 10px 20px 10px;
+    font-size: 18px;
+
+    @include tablet-view {
+      right: auto;
+    }
+
+    @include phone-view {
+      right: 9%;
+    }
+  }
+}
+
+#list-editor:focus {
+  outline: none;
+}
+
+.list-item {
+  width: 400px;
+  margin-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  background-color: #EBE5DC;
+  border-radius: 3px;
+
+  @include tablet-view {
+    width: 50vw;
+  }
+
+  @include phone-view {
+
+  }
+
+  .handle {
+    margin: 0 5% 0 3%;
+    height: 20px;
+  }
+
+  .li-name {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .rmv-btn {
+    // width: 10%;
+    // height: 16px;
+    margin-left: auto;
+    // margin-right: .5vh;
+    margin-right: 15px;
+    color: white;
+    cursor: pointer;
+  }
+
+  form {
+    input {
+      background: none;
+      width: 200px;
+      border: none;
+      margin: 1vh 0;
+      border-bottom: solid rgba(255,255,255,.0) 2px;
+      padding-top: 8px;
+      font-family: 'Brandon-Grotesque-Regular';
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #505050;
+      text-transform: uppercase;
+
+    }
+
+    input:focus {
+      border-bottom: solid #505050 2px;
+      outline: none;
+      margin-bottom: 1vh;
+      font-family: 'Brandon-Grotesque-Regular';
+    }
+  }
+}
+
+@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  #trans-wrap {
+    backdrop-filter: blur(20px) brightness(.9);
+    -webkit-backdrop-filter: blur(20px);
+    filter: blur(0px);
+
+  }
+}

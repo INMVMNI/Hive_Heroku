@@ -1,0 +1,337 @@
+@import './prvwBgImgs';
+
+#preview-window {
+  height: 66%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #preview-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(315deg, rgba(0,0,0,.8) 60%, rgba(0,0,0,0.6) 100%);
+    box-shadow: 4px 4px 8px -3px rgba(0,0,0,.6);
+
+    #preview {
+      position: relative;
+
+      #bgs-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        #nav-btns {
+          display: flex;
+          align-items: center;
+
+          p {
+            font-family: 'Brandon-Grotesque-Bold';
+            color: white;
+            font-size: 6px;
+            margin-left: 7px;
+            letter-spacing: 3px;
+          }
+        }
+
+        figure {
+          display: flex;
+          justify-content: space-between;
+
+          #bgs-nav-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            div {
+              width: 100%;
+              height: 1px;
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+&.select {
+
+  #preview-window {
+    @include phone-view {
+      height: 64%
+    }
+
+    #preview-border {
+      width: 95.5%;
+      // height: 92%;
+      height: 100%;
+      animation-name: fadein1;
+      animation-duration: 1.5s;
+      border-radius: 1vh;
+      overflow: hidden;
+
+      @include phone-view {
+        height: 75%;
+        max-height: 290px;
+        // min-height: 260px;
+      }
+
+      #preview {
+        width: 100%;
+        height: 100%;
+
+        #bgs-header {
+          padding: 1vh 2vh;
+
+          figure {
+
+            img {
+              height: 1.5vh;
+            }
+
+            #bgs-nav-icon {
+              height: 11px;
+              width: 18px;
+
+              div {
+                height: 1px;
+              }
+            }
+          }
+        }
+
+        #bgs-footer {
+          position: absolute;
+          bottom: 5px;
+          width: 100%;
+          height: 1.5vh;
+          display: flex;
+          justify-content: flex-end;
+          padding: 0 1vw;
+
+          div {
+            height: 100%;
+            color: rgba(255,255,255,.5);
+            font-size: .75vh;
+
+            img {
+              height: 1vh;
+              margin-right: 10px;
+            }
+
+            span {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @include phone-view {
+  //   #preview-window {
+  //
+  //     #preview-border {
+  //       height: 55%;
+  //       min-height: 260px;
+  //     }
+  //   }
+  // }
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+&.align {
+  #preview-window {
+
+    @include phone-view {
+      height: 64%;
+    }
+
+    #preview-border {
+      width: 37vh;
+      max-width: 43%;
+      height: 86%;
+      border-radius: 2vh;
+      animation-name: fadein2;
+      animation-duration: 1.5s;
+
+      #preview {
+        position: relative;
+        height: 90%;
+        width: 95%;
+
+        #bgs-header {
+          padding: 1vh 1vh;
+
+          #nav-btns {
+
+            p {
+              font-size: 4px;
+              margin-left: 5px;
+              letter-spacing: 2px;
+            }
+          }
+
+          figure {
+            padding-bottom: .25vh;
+
+            img {
+              height: 1.25vh;
+            }
+
+            #bgs-nav-icon {
+              height: 7px;
+              width: 12px;
+
+              div {
+                height: 1px;
+              }
+            }
+          }
+        }
+
+        #cover-imgs.aligning {
+          .cover-image {
+            transition: background-position 1s ease;
+          }
+        }
+
+        @import 'align-btns';
+
+        #bgs-footer {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #align-btns {
+    display: none;
+
+    div {
+      color: #303030;
+      width: 33.33%;
+      padding: .75vh 0;
+    }
+
+    div.active {
+      background-color: #505050;
+      color: white;
+    }
+  }
+
+  @include phone-view {
+    #preview-window {
+
+      #preview-border {
+        height: 85%;
+        max-width: 73%;
+
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+&.phone {
+
+  #preview-window {
+    height: 80%;
+
+    @include phone-view {
+      height: 65%;
+    }
+
+  }
+
+
+  #preview-border {
+    width: 30vh;
+    max-width: 32%;
+    height:55vh;
+    height: 70%;
+    border-radius: 2vh;
+    animation-name: fadein3;
+    animation-duration: 1.5s;
+
+    @include phone-view {
+      height: 80%;
+      max-width: 29vh;
+    }
+
+    #preview {
+      width: 90%;
+      height: 85%;
+
+      #bgs-header {
+        padding: 1vh 1vh;
+
+        figure {
+          padding-bottom: .25vh;
+
+          #bgs-logo {
+            height: 1.25vh;
+          }
+
+          #bgs-nav-icon {
+            height: 7px;
+            width: 12px;
+
+            div {
+              height: 1px;
+            }
+          }
+        }
+      }
+
+      #bgs-footer {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        height: 1.5vh;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 1vw;
+
+
+        div {
+          height: 100%;
+          color: rgba(255,255,255,.5);
+          font-size: .75vh;
+
+          img {
+            height: 1vh;
+            margin-right: 10px;
+          }
+
+          span {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  #align-btns {
+    display: none;
+  }
+
+  // @include phone-view {
+  //   #preview-window {
+  //     height: 65%;
+  //
+  //     #preview-border {
+  //       height: 80%;
+  //       max-width: 25vh;
+  //     }
+  //   }
+  // }
+}

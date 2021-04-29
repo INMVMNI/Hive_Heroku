@@ -1,0 +1,8 @@
+{
+  apiKey: 'AIzaSyDduSJTAlD51TIj5MAsQ6u6WabOR9XkTsU',
+  authDomain: 'hive-la-home.firebaseapp.com',
+  databaseURL: 'https://hive-la-home.firebaseio.com',
+  projectId: 'hive-la-home',
+  storageBucket: 'hive-la-home.appspot.com',
+  messagingSenderId: '24972771093'
+}

@@ -1,0 +1,74 @@
+#prvw-menu {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  #pm-frame {
+    overflow-y: hidden;
+
+    #pm-list {
+
+      .pm-item {
+        font-family: 'Brandon-Grotesque-Medium';
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+        opacity: .1;
+        transition: opacity .5s;
+      }
+      .pm-item.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#prvw-menu.select {
+
+  #pm-frame {
+    height: 35vh;
+
+    #pm-list {
+      .pm-item {
+        font-size: 4vh;
+        letter-spacing: 5px;
+        line-height: 5vh;
+      }
+    }
+  }
+}
+
+#prvw-menu.align {
+
+  #pm-frame {
+    height: 21vh;
+
+    #pm-list {
+      .pm-item {
+        line-height: 3vh;
+        font-size: 2vh;
+        letter-spacing: 4px;
+      }
+    }
+  }
+}
+
+#prvw-menu.phone {
+
+  #pm-frame {
+    height: 21vh;
+
+    #pm-list {
+      .pm-item {
+        line-height: 3vh;
+        font-size: 1.5vh;
+        letter-spacing: 3px;
+      }
+    }
+  }
+}
