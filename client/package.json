@@ -16,6 +16,9 @@
     "test": "export NODE_ENV=test && jest",
     "start": "serve -s build"
   },
+
+  "proxy": "http://localhost:5000",
+
   "repository": {
     "type": "git",
     "url": "https://github.com/ReactJSResources/react-webpack-babel"
