@@ -4,7 +4,9 @@ const path = require('path');
 const app = express();
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.use(express.static(__dirname));
 
 // Put all API endpoints under '/api'
 app.get('/api/words', (req, res) => {
@@ -27,11 +29,7 @@ app.get('/api/words', (req, res) => {
 // });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname ,'client' 'build' 'index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  });
+  res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
 const port = process.env.PORT || 5000;
