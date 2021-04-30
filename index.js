@@ -18,13 +18,17 @@ app.get('/api/words', (req, res) => {
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  });
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'), function(err) {
+//     if (err) {
+//       res.status(500).send(err)
+//     }
+//   });
+// });
+app.get('*', function (req, res) {
+  const index = path.join (__dirname, 'build', 'index.html')
+  res.sendFile(index)
+})
 
 const port = process.env.PORT || 5000;
 app.listen(port);
